@@ -49,25 +49,25 @@ function playRound(humanChoice, computerChoice) {
         humanChoice === "Paper" && computerChoice === "Paper" ||
         humanChoice === "Scissors" && computerChoice === "Scissors"
     ) {
-        console.log("Draw");
+        // print human, computer choices and result
+        console.log(`Player: ${humanChoice} & Computer: ${computerChoice} is Draw!`);
     } else if (
         humanChoice === "Rock" && computerChoice === "Scissors" ||
         humanChoice === "Paper" && computerChoice === "Rock" ||
         humanChoice === "Scissors" && computerChoice === "Paper"
     ) {
-        console.log(`${humanChoice} beats ${computerChoice}. Player wins!`);
+        console.log(`Player: ${humanChoice} beats Computer: ${computerChoice}. Player wins!`);
+        // add score
         humanScore++;
     } else if (
         computerChoice === "Rock" && humanChoice === "Scissors" ||
         computerChoice === "Paper" && humanChoice === "Rock" ||
         computerChoice === "Scissors" && humanChoice === "Paper"
     ) {
-        console.log(`${computerChoice} beats ${humanChoice}. Computer wins!`);
+        console.log(`Computer: ${computerChoice} beats Player: ${humanChoice}. Computer wins!`);
         computerScore++;
     }
 
-    // print computer and player choice
-    console.log(`Player choice: ${humanChoice} ----- Computer choice: ${computerChoice}`);
     // print score
     console.log(`Player score: ${humanScore} ----- Computer score: ${computerScore}`);
 
@@ -77,6 +77,16 @@ function playGame() {
     for (round = 1; round <= 5; round++) {
         console.log(`Round: ${round}`);
         playRound();
+    }
+
+    if (humanScore > computerScore) {
+        console.log("Player won the game!");
+        console.log(`Player score: ${humanScore} | Computer score: ${computerScore}`);
+    } else if (humanScore < computerScore) {
+        console.log("Computer won the game!");
+        console.log(`Player score: ${humanScore} | Computer score: ${computerScore}`);
+    } else {
+        console.log("Draw!");
     }
 }
 
