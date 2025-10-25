@@ -16,15 +16,12 @@ function playRound(humanChoice, computerChoice) {
 
     switch (humanChoice) {
         case 1:
-            console.log("Player: Rock");
             humanChoice = "Rock";
             break;
         case 2:
-            console.log("Player: Paper");
             humanChoice = "Paper";
             break;
         case 3:
-            console.log("Player: Scissors");
             humanChoice = "Scissors";
             break;
         default:
@@ -34,15 +31,12 @@ function playRound(humanChoice, computerChoice) {
 
     switch (computerChoice) {
         case 0:
-            console.log("Computer: Rock");
             computerChoice = "Rock";
             break;
         case 1:
-            console.log("Computer: Paper");
             computerChoice = "Paper";
             break;
         case 2:
-            console.log("Computer: Scissors");
             computerChoice = "Scissors";
             break;
         default:
@@ -79,4 +73,11 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-playRound();
+function playGame() {
+    for (round = 1; round <= 5; round++) {
+        console.log(`Round: ${round}`);
+        playRound();
+    }
+}
+
+playGame();
