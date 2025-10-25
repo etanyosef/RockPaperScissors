@@ -1,36 +1,82 @@
+// get computer choice using math random with floor(*3) = 0 to 2
 function getComputerChoice() {
     return Math.floor(Math.random() * 3);
-}
-
-let computerChoice = getComputerChoice();
-
-if (computerChoice === 0) {
-    console.log("Rock");
-} else if (computerChoice === 1) {
-    console.log("Paper");
-} else if (computerChoice === 2) {
-    console.log("Scissors");
-} else {
-    console.log("Invalid computer choice.");
 }
 
 function getHumanChoice() {
     return parseInt(prompt("Type 1 = Rock, 2 = Paper, 3 = Scissors"));
 }
 
-let humanChoice = getHumanChoice();
+let computerScore = 0;
+let humanScore = 0;
 
-switch (humanChoice) {
-    case 1:
-        console.log("Rock");
-        break;
-    case 2:
-        console.log("Paper");
-        break;
-    case 3:
-        console.log("Scissors");
-        break;
-    default:
-        console.log("Invalid choice");
-        break;
+function playRound(humanChoice, computerChoice) {
+    computerChoice = getComputerChoice();
+    humanChoice = getHumanChoice();
+
+    switch (humanChoice) {
+        case 1:
+            console.log("Player: Rock");
+            humanChoice = "Rock";
+            break;
+        case 2:
+            console.log("Player: Paper");
+            humanChoice = "Paper";
+            break;
+        case 3:
+            console.log("Player: Scissors");
+            humanChoice = "Scissors";
+            break;
+        default:
+            console.log("Player: Invalid choice");
+            break;
+    }
+
+    switch (computerChoice) {
+        case 0:
+            console.log("Computer: Rock");
+            computerChoice = "Rock";
+            break;
+        case 1:
+            console.log("Computer: Paper");
+            computerChoice = "Paper";
+            break;
+        case 2:
+            console.log("Computer: Scissors");
+            computerChoice = "Scissors";
+            break;
+        default:
+            console.log("Computer: Invalid choice");
+            break;
+    }
+
+    if(
+        humanChoice == "Rock" && computerChoice == "Rock" ||
+        humanChoice === "Paper" && computerChoice === "Paper" ||
+        humanChoice === "Scissors" && computerChoice === "Scissors"
+    ) {
+        console.log("Draw");
+    } else if (
+        humanChoice === "Rock" && computerChoice === "Scissors" ||
+        humanChoice === "Paper" && computerChoice === "Rock" ||
+        humanChoice === "Scissors" && computerChoice === "Paper"
+    ) {
+        console.log(`${humanChoice} beats ${computerChoice}. Player wins!`);
+        humanScore++;
+    } else if (
+        computerChoice === "Rock" && humanChoice === "Scissors" ||
+        computerChoice === "Paper" && humanChoice === "Rock" ||
+        computerChoice === "Scissors" && humanChoice === "Paper"
+    ) {
+        console.log(`${computerChoice} beats ${humanChoice}. Computer wins!`);
+        computerScore++;
+    }
+
+    // print computer and player choice
+    console.log(`Player choice: ${humanChoice} ----- Computer choice: ${computerChoice}`);
+    // print score
+    console.log(`Player score: ${humanScore} ----- Computer score: ${computerScore}`);
+
 }
+
+playRound();
