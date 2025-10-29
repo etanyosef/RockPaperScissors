@@ -3,16 +3,11 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3);
 }
 
-function getHumanChoice() {
-    return parseInt(prompt("Type 1 = Rock, 2 = Paper, 3 = Scissors"));
-}
-
 let computerScore = 0;
 let humanScore = 0;
 
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
-    humanChoice = getHumanChoice();
 
     switch (humanChoice) {
         case 1:
