@@ -71,8 +71,8 @@ function playRound(humanChoice) {
 }
 
 function finishGame() {
+    // disable selection buttons
     const btnRPS = document.querySelectorAll('.rps-btn');
-    btnRPS.disabled = true;
     btnRPS.forEach( (btn) => {
         btn.disabled = true;
     });
@@ -112,3 +112,13 @@ rpsSelection.addEventListener('click', (event) => {
             break;
     }
 });
+
+function newGame() {
+    const btnRPS = document.querySelectorAll('.rps-btn');
+    btnRPS.forEach( (btn) => {
+        btn.disabled = false;
+    });
+}
+
+const btnNewGame = document.querySelector('#new-game');
+btnNewGame.addEventListener('click', newGame());
