@@ -3,11 +3,13 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3);
 }
 
-let computerScore = 0;
-let humanScore = 0;
-
 const roundResults = document.querySelector('.round-results');
-const playerScore = document.querySelector('.player-score');
+const txtComputerScore = document.querySelector('.computer-score');
+const txtPlayerScore = document.querySelector('.player-score');
+
+// initialize player score
+let computerScore = 0;
+let playerScore = 0;
 
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
@@ -44,7 +46,9 @@ function playRound(humanChoice) {
         roundResult.textContent = `Player: ${humanChoice} beats Computer: ${computerChoice}. Player wins!`;
         roundResults.appendChild(roundResult);
         // add score
-        humanScore++;
+        playerScore++;
+        // display score
+        txtPlayerScore.textContent = playerScore;
     } else if (
         computerChoice === "Rock" && humanChoice === "Scissors" ||
         computerChoice === "Paper" && humanChoice === "Rock" ||
@@ -53,21 +57,22 @@ function playRound(humanChoice) {
         roundResult.textContent = `Computer: ${computerChoice} beats Player: ${humanChoice}. Computer wins!`;
         roundResults.appendChild(roundResult);
         computerScore++;
+        txtComputerScore.textContent = computerScore;
     }
 
     // print score
-    console.log(`Player score: ${humanScore} ----- Computer score: ${computerScore}`);
+    console.log(`Player score: ${playerScore} ----- Computer score: ${computerScore}`);
 
 }
 
 function playGame() {
 
-    if (humanScore > computerScore) {
+    if (playerScore > computerScore) {
         console.log("Player won the game!");
-        console.log(`Player score: ${humanScore} | Computer score: ${computerScore}`);
-    } else if (humanScore < computerScore) {
+        console.log(`Player score: ${playerScore} | Computer score: ${computerScore}`);
+    } else if (playerScore < computerScore) {
         console.log("Computer won the game!");
-        console.log(`Player score: ${humanScore} | Computer score: ${computerScore}`);
+        console.log(`Player score: ${playerScore} | Computer score: ${computerScore}`);
     } else {
         console.log("Draw!");
     }
