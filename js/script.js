@@ -60,9 +60,22 @@ function playRound(humanChoice) {
         txtComputerScore.textContent = computerScore;
     }
 
-    // print score
-    console.log(`Player score: ${playerScore} ----- Computer score: ${computerScore}`);
+    if (playerScore === 5) {
+        roundResult.textContent = "Player Wins!";
+        finishGame();        
+    } else if (computerScore === 5) {
+        roundResult.textContent = "You Lost. Computer Wins!";
+        finishGame();
+    }
 
+}
+
+function finishGame() {
+    const btnRPS = document.querySelectorAll('.rps-btn');
+    btnRPS.disabled = true;
+    btnRPS.forEach( (btn) => {
+        btn.disabled = true;
+    });
 }
 
 function playGame() {
