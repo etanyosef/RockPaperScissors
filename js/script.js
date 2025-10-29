@@ -10,8 +10,8 @@ function getHumanChoice() {
 let computerScore = 0;
 let humanScore = 0;
 
-function playRound(humanChoice, computerChoice) {
-    computerChoice = getComputerChoice();
+function playRound(humanChoice) {
+    let computerChoice = getComputerChoice();
     humanChoice = getHumanChoice();
 
     switch (humanChoice) {
@@ -74,10 +74,10 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    for (round = 1; round <= 5; round++) {
-        console.log(`Round: ${round}`);
-        playRound();
-    }
+    // for (round = 1; round <= 5; round++) {
+    //     console.log(`Round: ${round}`);
+    //     playRound();
+    // }
 
     if (humanScore > computerScore) {
         console.log("Player won the game!");
@@ -90,4 +90,24 @@ function playGame() {
     }
 }
 
-playGame();
+const rpsSelection = document.querySelector('.rps-selection');
+const btnRock = document.querySelector('#rock');
+const btnPaper = document.querySelector('#paper');
+const btnScissors = document.querySelector('#scissors');
+
+// use event delegation
+rpsSelection.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case 'rock':
+            console.log('Rock');
+            break;
+        case 'paper':
+            console.log('Paper');
+            break;
+        case 'scissors':
+            console.log('Scissors');
+            break;
+    }
+});
