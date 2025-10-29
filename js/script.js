@@ -9,21 +9,6 @@ let humanScore = 0;
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
 
-    switch (humanChoice) {
-        case 1:
-            humanChoice = "Rock";
-            break;
-        case 2:
-            humanChoice = "Paper";
-            break;
-        case 3:
-            humanChoice = "Scissors";
-            break;
-        default:
-            console.log("Player: Invalid choice");
-            break;
-    }
-
     switch (computerChoice) {
         case 0:
             computerChoice = "Rock";
@@ -69,10 +54,6 @@ function playRound(humanChoice) {
 }
 
 function playGame() {
-    // for (round = 1; round <= 5; round++) {
-    //     console.log(`Round: ${round}`);
-    //     playRound();
-    // }
 
     if (humanScore > computerScore) {
         console.log("Player won the game!");
@@ -96,13 +77,13 @@ rpsSelection.addEventListener('click', (event) => {
 
     switch(target.id) {
         case 'rock':
-            console.log('Rock');
+            playRound('Rock');
             break;
         case 'paper':
-            console.log('Paper');
+            playRound('Paper');
             break;
         case 'scissors':
-            console.log('Scissors');
+            playRound('Scissors');
             break;
     }
 });
