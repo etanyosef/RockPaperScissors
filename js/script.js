@@ -6,8 +6,11 @@ function getComputerChoice() {
 let computerScore = 0;
 let humanScore = 0;
 
+const roundResults = document.querySelector('.round-results');
+
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
+    let roundResult = document.createElement('li');
 
     switch (computerChoice) {
         case 0:
@@ -30,7 +33,8 @@ function playRound(humanChoice) {
         humanChoice === "Scissors" && computerChoice === "Scissors"
     ) {
         // print human, computer choices and result
-        console.log(`Player: ${humanChoice} & Computer: ${computerChoice} is Draw!`);
+        roundResult.textContent = `Player: ${humanChoice} & Computer: ${computerChoice} is Draw!`;
+        roundResults.appendChild(roundResult); 
     } else if (
         humanChoice === "Rock" && computerChoice === "Scissors" ||
         humanChoice === "Paper" && computerChoice === "Rock" ||
