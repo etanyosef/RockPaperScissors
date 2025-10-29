@@ -7,10 +7,11 @@ let computerScore = 0;
 let humanScore = 0;
 
 const roundResults = document.querySelector('.round-results');
+const playerScore = document.querySelector('.player-score');
 
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
-    let roundResult = document.createElement('li');
+    const roundResult = document.createElement('li');
 
     switch (computerChoice) {
         case 0:
@@ -40,7 +41,8 @@ function playRound(humanChoice) {
         humanChoice === "Paper" && computerChoice === "Rock" ||
         humanChoice === "Scissors" && computerChoice === "Paper"
     ) {
-        console.log(`Player: ${humanChoice} beats Computer: ${computerChoice}. Player wins!`);
+        roundResult.textContent = `Player: ${humanChoice} beats Computer: ${computerChoice}. Player wins!`;
+        roundResults.appendChild(roundResult);
         // add score
         humanScore++;
     } else if (
@@ -48,7 +50,8 @@ function playRound(humanChoice) {
         computerChoice === "Paper" && humanChoice === "Rock" ||
         computerChoice === "Scissors" && humanChoice === "Paper"
     ) {
-        console.log(`Computer: ${computerChoice} beats Player: ${humanChoice}. Computer wins!`);
+        roundResult.textContent = `Computer: ${computerChoice} beats Player: ${humanChoice}. Computer wins!`;
+        roundResults.appendChild(roundResult);
         computerScore++;
     }
 
