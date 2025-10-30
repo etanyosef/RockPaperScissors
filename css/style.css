@@ -1,0 +1,55 @@
+* {
+    box-sizing: content-box;
+    font-family: monospace;
+}
+
+body {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+#new-game {
+    display: block;
+    margin: auto;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px 30px;
+}
+
+.score-container h2 {
+    /* margin-bottom: 10px; */
+}
+
+.score-container h3 {
+    margin: 10px auto;
+}
+
+.score-board {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.score-board > div {
+    padding: 0 50px;
+}
+
+.player-score, .computer-score {
+    font-size: 10rem;
+}
+
+.rps-selection {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.rps-selection button {
+    cursor: pointer;
+}
