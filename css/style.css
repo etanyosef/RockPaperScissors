@@ -49,6 +49,14 @@ footer {
     font-size: 8rem;
 }
 
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
 .rps-selection {
     display: flex;
     justify-content: center;

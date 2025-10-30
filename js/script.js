@@ -61,11 +61,24 @@ function playRound(humanChoice) {
     }
 
     if (playerScore === 5) {
-        roundResult.textContent = "Player Wins!";
+        roundResult.textContent = "You won the game!";
+        // add color to result
+        roundResult.classList.add('green');
+        roundResults.prepend(roundResult);
+
         finishGame();        
+        // add color to final scores
+        txtPlayerScore.classList.add('green');
+        txtComputerScore.classList.add('red');
     } else if (computerScore === 5) {
         roundResult.textContent = "You Lost. Computer Wins!";
+
+        roundResult.classList.add('red');
+        roundResults.prepend(roundResult);
         finishGame();
+
+        txtPlayerScore.classList.add('red');
+        txtComputerScore.classList.add('green');
     }
 
 }
@@ -110,6 +123,12 @@ function newGame() {
     txtPlayerScore.textContent = playerScore;
     txtComputerScore.textContent = computerScore;
 
+    // remove class
+    txtPlayerScore.classList.remove('red');
+    txtPlayerScore.classList.remove('green');
+    txtComputerScore.classList.remove('red');
+    txtComputerScore.classList.remove('green');
+    
     const roundResult = document.createElement('li');
     roundResult.textContent = "NEW GAME!";
     roundResults.prepend(roundResult);
