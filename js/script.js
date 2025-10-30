@@ -115,10 +115,18 @@ rpsSelection.addEventListener('click', (event) => {
 
 function newGame() {
     const btnRPS = document.querySelectorAll('.rps-btn');
+
+    playerScore = 0;
+    computerScore = 0;
+    txtPlayerScore.textContent = playerScore;
+    txtComputerScore.textContent = computerScore;
+
+    // enable rock paper scissor choices
     btnRPS.forEach( (btn) => {
         btn.disabled = false;
     });
+    console.log('asd');
 }
 
 const btnNewGame = document.querySelector('#new-game');
-btnNewGame.addEventListener('click', newGame());
+btnNewGame.addEventListener('click', newGame);
