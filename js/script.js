@@ -13,7 +13,6 @@ let playerScore = 0;
 
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
-    const roundResult = document.createElement('li');
 
     switch (computerChoice) {
         case 0:
@@ -36,14 +35,16 @@ function playRound(humanChoice) {
         humanChoice === "Scissors" && computerChoice === "Scissors"
     ) {
         // print human, computer choices and result
-        roundResult.textContent = `Player: ${humanChoice} & Computer: ${computerChoice} is Draw!`;
+        const roundResult = document.createElement('li');
+        roundResult.textContent = `You picked ${humanChoice}, Computer picked ${computerChoice}. Draw!`;
         roundResults.prepend(roundResult); 
     } else if (
         humanChoice === "Rock" && computerChoice === "Scissors" ||
         humanChoice === "Paper" && computerChoice === "Rock" ||
         humanChoice === "Scissors" && computerChoice === "Paper"
     ) {
-        roundResult.textContent = `Player: ${humanChoice} beats Computer: ${computerChoice}. Player wins!`;
+        const roundResult = document.createElement('li');
+        roundResult.textContent = `You picked ${humanChoice}, Computer picked ${computerChoice}. ${humanChoice} beats ${computerChoice}. Player wins!`;        
         roundResults.prepend(roundResult);
         // add score
         playerScore++;
@@ -54,12 +55,14 @@ function playRound(humanChoice) {
         computerChoice === "Paper" && humanChoice === "Rock" ||
         computerChoice === "Scissors" && humanChoice === "Paper"
     ) {
-        roundResult.textContent = `Computer: ${computerChoice} beats Player: ${humanChoice}. Computer wins!`;
+        const roundResult = document.createElement('li');
+        roundResult.textContent = `You picked ${humanChoice}, Computer picked ${computerChoice}. ${computerChoice} beats ${humanChoice}. Computer wins!`;
         roundResults.prepend(roundResult);
         computerScore++;
         txtComputerScore.textContent = computerScore;
     }
-
+    
+    const roundResult = document.createElement('li');
     if (playerScore === 5) {
         roundResult.textContent = "You won the game!";
         // add color to result
@@ -130,7 +133,7 @@ function newGame() {
     txtComputerScore.classList.remove('green');
     
     const roundResult = document.createElement('li');
-    roundResult.textContent = "NEW GAME!";
+    roundResult.textContent = "----------------------NEW GAME!----------------------";
     roundResults.prepend(roundResult);
 
     // enable rock paper scissor choices
