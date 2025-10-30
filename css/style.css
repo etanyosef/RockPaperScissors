@@ -9,6 +9,14 @@ body {
     padding: 0;
 }
 
+main {
+    min-height: 80vh;
+}
+
+footer {
+    text-align: center;
+}
+
 .title {
     text-align: center;
 }
@@ -19,10 +27,6 @@ body {
     font-size: 2rem;
     cursor: pointer;
     padding: 5px 30px;
-}
-
-.score-container h2 {
-    /* margin-bottom: 10px; */
 }
 
 .score-container h3 {
@@ -41,15 +45,50 @@ body {
 }
 
 .player-score, .computer-score {
-    font-size: 10rem;
+    font-size: 8rem;
 }
 
 .rps-selection {
     display: flex;
     justify-content: center;
+    vertical-align: middle;
     gap: 50px;
 }
 
 .rps-selection button {
     cursor: pointer;
+    width: 200px;
+    height: 200px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1px;
+    z-index: 1;
+}
+
+.rps-selection img {
+    width: 100%;
+    z-index: -1;
+}
+
+#rock {
+    background-image: url('../img/rock.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.rps-selection button:hover {
+    transform: translate(-5px, -5px);
+}
+
+.rps-selection button:disabled {
+    opacity: .5;
+    transform: none;
+}
+
+.result-container h2 {
+    text-align: center;
+}
+
+.round-results li {
+    font-size: 1.3rem;
 }
