@@ -78,18 +78,6 @@ function finishGame() {
     });
 }
 
-function playGame() {
-
-    if (playerScore > computerScore) {
-        console.log("Player won the game!");
-        console.log(`Player score: ${playerScore} | Computer score: ${computerScore}`);
-    } else if (playerScore < computerScore) {
-        console.log("Computer won the game!");
-        console.log(`Player score: ${playerScore} | Computer score: ${computerScore}`);
-    } else {
-        console.log("Draw!");
-    }
-}
 
 const rpsSelection = document.querySelector('.rps-selection');
 const btnRock = document.querySelector('#rock');
