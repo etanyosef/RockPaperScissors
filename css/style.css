@@ -97,6 +97,10 @@ footer {
     transform: translate(-5px, -5px);
 }
 
+.rps-selection button:active {
+    transform: translate(-8px, -8px);
+}
+
 .rps-selection button:disabled {
     opacity: .3;
     transform: none;
@@ -117,6 +121,12 @@ footer {
 
 .round-results li {
     font-size: 1.3rem;
+    padding: 3px 0;
+}
+
+.round-results li:hover {
+    background-color: rgb(187, 185, 185);
+    color: white;
 }
 
 /* RESULT CONTAINER END */
