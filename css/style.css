@@ -30,6 +30,10 @@ footer {
     padding: 5px 30px;
 }
 
+.score-container h2 {
+    margin-bottom: 10px;
+}
+
 .score-container h3 {
     margin: 10px auto;
 }
@@ -57,20 +61,22 @@ footer {
     color: green;
 }
 
+/* RPS SELECTION START */
+
 .rps-selection {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     vertical-align: middle;
-    gap: 50px;
+    gap: 100px;
 }
 
 .rps-selection button {
     cursor: pointer;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 0;
     background-color: rgba(0, 0, 0, 0);
-    padding: 1px;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -96,6 +102,15 @@ footer {
     transform: none;
 }
 
+/* RPS SELECTION END */
+
+/* RESULT CONTAINER START */
+
+.result-container {
+    width: 60vw;
+    margin: auto;
+}
+
 .result-container h2 {
     text-align: center;
 }
@@ -103,3 +118,5 @@ footer {
 .round-results li {
     font-size: 1.3rem;
 }
+
+/* RESULT CONTAINER END */
