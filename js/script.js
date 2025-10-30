@@ -37,14 +37,14 @@ function playRound(humanChoice) {
     ) {
         // print human, computer choices and result
         roundResult.textContent = `Player: ${humanChoice} & Computer: ${computerChoice} is Draw!`;
-        roundResults.appendChild(roundResult); 
+        roundResults.prepend(roundResult); 
     } else if (
         humanChoice === "Rock" && computerChoice === "Scissors" ||
         humanChoice === "Paper" && computerChoice === "Rock" ||
         humanChoice === "Scissors" && computerChoice === "Paper"
     ) {
         roundResult.textContent = `Player: ${humanChoice} beats Computer: ${computerChoice}. Player wins!`;
-        roundResults.appendChild(roundResult);
+        roundResults.prepend(roundResult);
         // add score
         playerScore++;
         // display score
@@ -55,7 +55,7 @@ function playRound(humanChoice) {
         computerChoice === "Scissors" && humanChoice === "Paper"
     ) {
         roundResult.textContent = `Computer: ${computerChoice} beats Player: ${humanChoice}. Computer wins!`;
-        roundResults.appendChild(roundResult);
+        roundResults.prepend(roundResult);
         computerScore++;
         txtComputerScore.textContent = computerScore;
     }
