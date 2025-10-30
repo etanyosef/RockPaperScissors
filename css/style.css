@@ -15,6 +15,7 @@ main {
 
 footer {
     text-align: center;
+    font-size: 1.3rem;
 }
 
 .title {
@@ -62,18 +63,20 @@ footer {
     border: 0;
     background-color: rgba(0, 0, 0, 0);
     padding: 1px;
-    z-index: 1;
-}
-
-.rps-selection img {
-    width: 100%;
-    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #rock {
     background-image: url('../img/rock.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+}
+
+#paper {
+    background-image: url('../img/paper.png');
+}
+
+#scissors {
+    background-image: url('../img/scissors.png');
 }
 
 .rps-selection button:hover {
@@ -81,7 +84,7 @@ footer {
 }
 
 .rps-selection button:disabled {
-    opacity: .5;
+    opacity: .3;
     transform: none;
 }
 
